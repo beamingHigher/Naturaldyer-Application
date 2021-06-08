@@ -1,0 +1,58 @@
+extends ../adminBase
+
+block content
+  .panel-content#yarnPanel
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='editYarn')
+        .row.mrg20.warps
+          .col.m4.col.s6.col.l4
+            p Code*
+            input.brd-rd5.validate#code(name='code' type='text' value=`${data.code}`)
+            span.error-box
+          .col.m4.col.s12.col.l4
+            p Supplier Name
+            input.brd-rd5.validate(name='supplierId' type='text' value=`${user.name}` disabled=true)
+            input#supplierId(type='hidden' name='target' value=`${data.supplierId}`)
+            input#_id(type='hidden' name='target' value=`${data._id}`)
+          .col.m4.col.s6.col.l4
+            p Title
+            input.brd-rd5.validate#title(name='title' type='text' value=`${data.title}`)
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p Material
+            input.brd-rd5.validate#material(name='material' type='text' value=`${data.material}`)
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p Weight
+            input.brd-rd5.validate#weight(name='weight' type='number' value=`${data.weight}`)
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Description
+            textarea.brd-rd5#description()=data.description
+          .col.m6.col.s12.col.l6
+            p Notes
+            textarea.brd-rd5#notes()=data.notes
+        .row.mt-top-1
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active For Business
+              label.switch-light.switch-candy
+                input#activeForBusiness(type='checkbox' checked=data.activeForBusiness)
+                span
+                  span Off
+                  span On
+                  a
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active For Customer
+              label.switch-light.switch-candy
+                input#activeForCustomers(type='checkbox' checked=data.activeForCustomers)
+                span
+                  span Off
+                  span On
+                  a
+          .col.m6.col.s12.col.l6
+            img(class='preview_image' src=`/img/uploads/${data.image}`)
+          .col.m12.col.s12.col.l12.save-now.mt-top-1
+            button.green-bg.brd-rd5(type="submit") Submit
+          

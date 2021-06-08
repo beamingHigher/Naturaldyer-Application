@@ -1,0 +1,72 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='createWarp')
+        .row.mrg20.warps
+          .col.m4.col.s6.col.l4
+            p Code
+            input.brd-rd5#code(name='code' type='text' placeholder='Code*')
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Title
+            input.brd-rd5#title(name='title' type='text' placeholder='Title*')
+            span.error-box
+          .col.m4.col.s12.col.l4
+            p Material
+            input.brd-rd5#material(name='material' type='text' placeholder='Material*')
+            span.error-box
+          .col.m3.col.s6.col.l3
+            p Select Product Category
+            span.slct-bx
+              span
+                select#productCategory
+                  option(value='0' selected=true) Product Category
+                  each productCategory in allActiveCollection
+                    option(value= productCategory._id)= productCategory.name
+          .col.m3.col.s6.col.l3
+            p Weight
+            input.brd-rd5#weight(name='weight' type='number' placeholder='Weight*')
+            span.error-box
+          .col.m3.col.s6.col.l3
+            p Cost per Killogram
+            input.brd-rd5#costPerKg(name='costperkilograms' type='number' placeholder='Cost Per Kilograms*')
+            span.error-box
+          .col.m3.col.s6.col.l3
+            p Supplement
+            input.brd-rd5#supplement(name='supplement' type='number' placeholder='Supplement*')
+            span.error-box
+          .col.m3.col.s6.col.l3
+            p Cost Supplement
+            input.brd-rd5#costSupplement(name='cost supplement' type='number' placeholder='Cost Supplement*')
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Colour
+            input.brd-rd5#colour(name='colour' type='text' placeholder='Colour*')
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Notes
+            textarea.brd-rd5#notes(placeholder='Write down some notes...')
+          .col.m6.col.s12.col.l6
+            p Description
+            textarea.brd-rd5#description(placeholder='Enter a description...')
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active
+              label.switch-light.switch-candy
+                input#active(type='checkbox')
+                span
+                  span Off
+                  span On
+                  a
+          .col.m6.col.s12.col.l6
+            .file-upload-box
+              strong Image
+              .file-box
+                label.fileContainer
+                  span.blue-bg.brd-rd5 Choose File
+                  span#titleFile No File Selected
+                  input#file_input(type='file')
+        .col.m12.col.s12.col.l12.save-now.mt-top-1
+          button.green-bg.brd-rd5(type="submit") Submit

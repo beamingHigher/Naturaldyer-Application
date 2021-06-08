@@ -1,0 +1,50 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+    .widget.pad50-65
+      .row.mrg20
+        .col.m12.grid-item.col.s12.col.l12
+          .widget.proj-order.pad50-40
+            .wdgt-ldr
+              .ball-scale-multiple
+                div
+                div
+                div
+            h4.widget-title Suppliers List
+            a.add-proj.brd-rd5(href='#' data-toggle='tooltip' title='Add Project' data-tooltip='Add Project') + Add
+            .slct-bx
+                i.ion-android-funnel Sort By:
+                span
+                  select
+                    option Date
+                    option Name
+                    option Category
+                    option Duration
+            .table-wrap
+              table.table.table-bordered.style2
+                thead
+                  tr
+                  th #
+                  th CompanyName
+                  th SupplierType
+                  th Bank
+                  th Reference
+                  th Action
+                tbody
+                  each supplier in data
+                    tr
+                      td
+                        span.blue-bg.indx 01
+                      td
+                        h4.name= supplier.companyName
+                      td
+                        h4.name= supplier.supplierType
+                      td
+                        h4.name= supplier.bank
+                      td
+                        h4.name= supplier.reference
+                      td
+                        .table-btns
+                          a.blue-bg-hover(href='#') Edit
+                          a.blue-bg-hover(href='#') Delete

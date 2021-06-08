@@ -1,0 +1,62 @@
+extends ../adminBase
+
+block content
+  .panel-content#yarnPanel
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='createYarn')
+        .row.mrg20.warps
+          .col.m4.col.s6.col.l4
+            p Title
+            input.brd-rd5.validate#title(name='title' type='text' placeholder='Title*')
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Code*
+            input.brd-rd5.validate#code(name='code' type='text' placeholder='Code*')
+            span.error-box
+          .col.m4.col.s12.col.l4#ys
+            p Supplier Name
+            input.brd-rd5.validate(name='code' type='text' value=`${user.name}` disabled=true)
+            input#supplierId(type='hidden' name='target' value=`${user._id}`)
+          .col.m6.col.s6.col.l6
+            p Material
+            input.brd-rd5.validate#material(name='material' type='text' placeholder='Material*')
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p Weight
+            input.brd-rd5.validate#weight(name='weight' type='number' placeholder='Weight (Grams)*')
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Description
+            textarea.brd-rd5#description(placeholder='Enter a description...')
+          .col.m6.col.s12.col.l6
+            p Notes
+            textarea.brd-rd5#notes(placeholder='Write down some notes...')
+        .row.mt-top-1
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active For Business
+              label.switch-light.switch-candy
+                input#activeForBusiness(type='checkbox')
+                span
+                  span Off
+                  span On
+                  a
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active For Customer
+              label.switch-light.switch-candy
+                input#activeForCustomers(type='checkbox')
+                span
+                  span Off
+                  span On
+                  a
+          .col.m6.col.s12.col.l6
+            .file-upload-box
+              strong Image
+              .file-box
+                label.fileContainer
+                  span.blue-bg.brd-rd5 Choose File
+                  span#titleFile No File Selected
+                  input#file_input(type='file')
+          .col.m12.col.s12.col.l12.save-now.mt-top-1
+            button.green-bg.brd-rd5(type="submit") Submit 

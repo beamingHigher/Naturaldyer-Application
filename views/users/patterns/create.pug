@@ -1,0 +1,53 @@
+extends ../adminBase
+
+block content
+  #modelPanel.panel-content
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='createPattern')
+        .row.mrg20.warps
+          .col.m4.col.s6.col.l4
+            p Code
+            input.brd-rd5#code(name='code' type='text' placeholder='Code*')
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Module Number
+            input.brd-rd5#moduleNumber(name='modulesnumber' type='number' placeholder='Modules Number*')
+            span.error-box
+          .col.m4.col.s12.col.l4#ys
+            p Supplier Name
+            input.brd-rd5.validate(name='code' type='text' value=`${user.name}` disabled=true)
+            input#supplierId(type='hidden' name='target' value=`${user._id}`)
+          .col.m6.col.s12.col.l6
+            p Description
+            textarea.brd-rd5#description(placeholder='Enter a description...')
+          .col.m6.col.s12.col.l6
+            p Notes
+            textarea.brd-rd5#notes(placeholder='Write down some notes...')
+          .col.m6.col.s6.col.l6
+            p Size Id
+            span.slct-bx
+              span
+                select#sizeId
+                  option(value='0' selected=true) Size Id
+                  each size in allActiveSize
+                    option(value= size._id)= size.name
+          .col.m6.col.s12.col.l6
+            .opt-btn
+              p Active
+              label.switch-light.switch-candy(onclick='')
+                input#active(type='checkbox')
+                span
+                  span Off
+                  span On
+                  a
+        .col.m12.col.s12.col.l12.mt-top-1
+          .file-upload-box
+            strong Upload Image
+            .file-box
+              label.fileContainer
+                span.blue-bg.brd-rd5 Choose File
+                span#titleFile No File Selected
+                input#file_input(type='file')
+        .col.m12.col.s12.col.l12.save-now.mt-top-1
+          button.green-bg.brd-rd5(type="submit") Submit
+        

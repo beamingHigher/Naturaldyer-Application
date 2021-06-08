@@ -1,0 +1,54 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='createModule')
+        .row.mrg20.warps
+          .col.m4.col.s6.col.l4
+            p Code
+            input.brd-rd5#code(name='code' type='text' placeholder='Code*')
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Beats Number
+            input.brd-rd5#beatsNumber(name='beatsnumber' type='number' placeholder='Beats Number*')
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Minimum Weight 
+            input.brd-rd5#minimumWeight(name='minimumweight' type='number' placeholder='Minimum Weight*')
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Maximum Weight
+            input.brd-rd5#maximumWeight(name='maximumweight' type='number' placeholder='Maximum Weight*')
+            span.error-box
+          .col.m4.col.s12.col.l4
+            p Pattern Id
+            span.slct-bx
+              span
+                select#patternId
+                  option(value='0' selected=true) pattern Id
+                  each pattern in allActivePattern
+                    option(value= pattern._id)= pattern.code
+          .col.m4.col.s12.col.l4
+            p Order
+            input.brd-rd5#order(name='order' type='number' placeholder='Order*')
+            span.error-box
+          .col.m6.col.s12.col.l6
+            .file-upload-box
+              strong Upload Image
+              .file-box
+                label.fileContainer
+                  span.blue-bg.brd-rd5 Choose File
+                  span#titleFile No File Selected
+                  input#file_input(type='file')
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active
+              label.switch-light.switch-candy
+                input#active(type='checkbox')
+                span
+                  span Off
+                  span On
+                  a
+        .col.m12.col.s12.col.l12.save-now.mt-top-1
+            button.green-bg.brd-rd5(type="submit") Submit

@@ -1,0 +1,50 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='editLoom')
+        .row.mrg20.warps
+          .col.m6.col.s12.col.l6
+            p Name
+            input.brd-rd5#name(name='name' type='text' value=`${data.name}`)
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Warp Name
+            input.brd-rd5.validate(name='code' type='text' value=`${data.warpId.title}` disabled=true)
+          .col.m6.col.s12.col.l6
+            p Supplier Name
+            input.brd-rd5.validate(name='code' type='text' value=`${user.name}` disabled=true)
+            input#_id(type='hidden' name='target' value=`${data._id}`)
+          .col.m6.col.s6.col.l6
+            p Chain Reduction
+            input.brd-rd5#chainReduction(name='chainreduction' type='number' value=`${data.chainReduction}`)
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p High In Cm
+            input.brd-rd5#highInCm(name='highincm' type='number' value=`${data.highInCm}`)
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Cost Per Beat
+            input.brd-rd5#costPerBeat(name='costperbeat' type='number' value=`${data.costPerBeat}`)
+            span.error-box
+        .row.mrg20.warps
+          .col.m6.col.s12.col.l6
+            p Description
+            textarea.brd-rd5#description()=data.description
+          .col.m6.col.s12.col.l6
+            p Notes
+            textarea.brd-rd5#notes()=data.notes
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active
+              label.switch-light.switch-candy
+                input#active(type='checkbox' checked=data.active)
+                span
+                  span Off
+                  span On
+                  a
+          .col.m6.col.s12.col.l6
+            img(class='preview_image' src=`/img/uploads/${data.image}`)
+          .col.m12.col.s12.col.l12.save-now.mt-top-1
+            button.green-bg.brd-rd5(type="submit") Submit

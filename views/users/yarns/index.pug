@@ -1,0 +1,65 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel(data-model='yarns')
+    .widget.pad50-65
+      .row.mrg20
+        .col.m12.grid-item.col.s12.col.l12
+            .wdgt-ldr
+              .ball-scale-multiple
+                div
+                div
+                div
+            h4.widget-title Yarns List
+            div
+              a.add-proj.brd-rd5(href='/user/yarns/create' data-toggle='tooltip' title='Add Project' data-tooltip='Add Project') + Add
+            .table-wrap
+              table.table.table-bordered.style2
+                thead
+                  tr
+                  th #
+                  th Title
+                  th Photo
+                  th Material
+                  th Code
+                  th Weight
+                  th Action
+                tbody
+                -let x = 0
+                  each yarn in data
+                    -x=x+1
+                    tr
+                      td
+                        span.custom_yellow_yellow.indx=x
+                      td
+                        h4.name= yarn.title
+                      td
+                        span.blue-bg.indx
+                          img(src=`/img/uploads/${yarn.image}` height='50' width='50')
+                      td
+                        h4.name= yarn.material
+                      td
+                        h4.name= yarn.code
+                      td
+                        h4.name= yarn.weight
+                      td
+                        .table-btns
+                          a.custom_yellow_yellow-hover(href=`/user/yarns/${yarn._id}`) Edit
+                          a.custom_yellow_yellow-hover.openmodale(href='#' data-id=`${yarn._id}`) Delete
+    .pgntn.style2.custom_background_black
+      ul.pgntn-lst
+        li.prv
+          a(href='#') Previous
+        li
+          a(href='#')
+            span.active.custom_yellow_yellow 1
+        li.nxt
+          a(href='#') Next
+  .modale#deleteModal(aria-hidden='true' data-id)
+    .modal-dialog
+      .modal-header
+        h5 Do you want to delete it?
+        a.btn-close.closemodale(href='#' aria-hidden='true') ×
+      .modal-footer
+        a.brd-rd30.waves-effect.waves-light.btn.red.btn-sm#deleteBtn(href='#') Delete
+        a.brd-rd30.waves-effect.waves-light.btn.green.btn-sm.closemodale(href='#') Cancel

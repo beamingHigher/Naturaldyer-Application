@@ -1,0 +1,95 @@
+doctype html
+html
+  head
+    // Meta-Information
+    title Naturaldyer
+    meta(charset="utf-8")
+    meta(name="description" content="")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    // Vendor: Materialize Stylesheets
+    link(rel="stylesheet" href="../assets/css/materialize.min.css" type="text/css")
+    // Our Website CSS Styles
+    link(rel="stylesheet" href="../assets/css/icons.min.css" type="text/css")
+    link(rel="stylesheet" href="../assets/css/main.css" type="text/css")
+    link(rel="stylesheet" href="../assets/css/responsive.css" type="text/css")
+    // Color Scheme
+    link(rel="stylesheet" href="../assets/css/color-schemes/color.css" type="text/css" title="color3")
+  body.dark.panel-data.expand-data
+    .panel-content
+      .lgn-wrp.grysh
+        .bg-img(style="background-image: url(../assets/images/resource/bg-img1.png);")
+        .lgn-innr
+          .widget.lgn-frm
+            .frm-tl
+              h4 Register to  Naturaldyer
+              span Fill your detail for Spinner registration
+            form.form-wrp#spinnerRegistrationForm
+              .row.mrg20
+                .col.m6.col.s6.col.l6
+                  p Company Name
+                  input#companyName.brd-rd30(type="text" placeholder="Company Name*")
+                .col.m6.col.s6.col.l6
+                  p Name
+                  input.brd-rd30(type='text' value=`${user.name}` disabled=true)
+                  input#userId(type='hidden' name='target' value=`${user._id}`)
+                .col.m6.col.s6.col.l6
+                  p Telephone
+                  input#telephone.brd-rd30(type="text" placeholder="Telephone*")
+                .col.m6.col.s6.col.l6
+                  p VAT Number
+                  input#vatNumber.brd-rd30(type="text" placeholder="VAT Number*")
+                .col.m6.col.s6.col.l6
+                  p Reference
+                  input#reference.brd-rd30(type="text" placeholder="Reference*")
+                .col.m6.col.s6.col.l6
+                  p Description
+                  input#description.brd-rd30(type="text" placeholder="Description*")
+                .col.m12.col.s12.col.l12
+                  .file-upload-box
+                    strong Bussiness Certificate
+                    .file-box
+                      label.fileContainer
+                        span.blue-bg.brd-rd5 Browse
+                        |                                       No File Selected.
+                        input(type="file")
+                .col.m12.col.s12.col.l12
+                  button.green-bg.brd-rd5(type="submit")
+                    i.fa.fa-paper-plane
+                    |  Registration Completed
+        footer
+          p
+            | Copyright 
+            a(href="#" title="") Naturaldyer
+            |  & 2020 - 2021
+          span Decentralized Textile Valuechain.
+      // Login Wrapper
+    // Panel Content
+    // Vendor: Javascripts
+    script(src='../js/bundle.js')
+    script(src="../assets/js/jquery.min.js" type="text/javascript")
+    // Vendor: Followed by our custom Javascripts
+    script(src="../assets/js/materialize.min.js" type="text/javascript")
+    script(src="../assets/js/select2.min.js" type="text/javascript")
+    script(src="../assets/js/slick.min.js" type="text/javascript")
+    // Our Website Javascripts
+    script(src="../assets/js/isotope.min.js" type="text/javascript")
+    script(src="../assets/js/isotope-int.js" type="text/javascript")
+    script(src="../assets/js/jquery.counterup.js" type="text/javascript")
+    script(src="../assets/js/waypoints.min.js" type="text/javascript")
+    script(src="../assets/js/highcharts.js" type="text/javascript")
+    script(src="../assets/js/exporting.js" type="text/javascript")
+    script(src="../assets/js/highcharts-more.js" type="text/javascript")
+    script(src="../assets/js/moment.min.js" type="text/javascript")
+    script(src="../assets/js/jquery.circliful.min.js" type="text/javascript")
+    script(src="../assets/js/fullcalendar.min.js" type="text/javascript")
+    script(src="../assets/js/jquery.downCount.js" type="text/javascript")
+    script(src="../assets/js/jquery.bootstrap-touchspin.min.js" type="text/javascript")
+    script(src="../assets/js/jquery.formtowizard.js" type="text/javascript")
+    script(src="../assets/js/form-validator.min.js" type="text/javascript")
+    script(src="../assets/js/form-validator-lang-en.min.js" type="text/javascript")
+    script(src="../assets/js/cropbox-min.js" type="text/javascript")
+    script(src="../assets/js/jquery.slimscroll.min.js" type="text/javascript")
+    script(src="../assets/js/ion.rangeSlider.min.js" type="text/javascript")
+    script(src="../assets/js/jquery.poptrox.min.js" type="text/javascript")
+    script(src="../assets/js/styleswitcher.js" type="text/javascript")
+    script(src="../assets/js/main.js" type="text/javascript")

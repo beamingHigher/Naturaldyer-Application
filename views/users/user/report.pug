@@ -1,0 +1,155 @@
+extends ../userBase
+
+block content
+  .pg-tp
+    .pr-tp-inr
+      h4 Order Complete
+
+  .panel-content
+    .widget.pad50-65
+      .invoice-wrp
+        .invoice-hd
+          .logo
+            h1
+              a(href='#')
+                img(src='../img/logo.png' alt)
+        .invoice-dte
+          h5 Pattern: 19219/unbleached
+          span
+            | Module: 
+            i 19219/juta_1
+        .invoice-inf
+          .inf-inr.inf-frm
+            span
+              | Yarn: : 
+              i ALPACA
+            span
+              | Colour: 
+              i alpaca 160
+            span
+              | Module: 
+              i 19219/juta_2
+            span
+              | Yarn: 
+              i BIOWOOL
+            span
+              | Colour: 
+              i 35 BIOWOOL
+            span
+              | Module: 
+              i 19219/juta_3
+            span
+              | Yarn: 
+              i COTTON NATURALE
+            span
+              | Colour: 
+              i CS710
+        .row.mrg20.warps
+          .col.m6.col.s12.col.l6
+            .invoice-table
+              table.table.table-bordered
+                tbody
+                  tr
+                    td
+                      span Threads on warp chain
+                    td
+                    td
+                      span 7200
+                  tr
+                    td
+                      span Weight on warp chain
+                    td
+                    td
+                      span g. 288.00
+                  tr
+                    td
+                      span Warp chain cost
+                    td
+                    td
+                      span € 3.47
+                  tr
+                    td
+                      span Working process cost on a beat
+                    td
+                    td
+                      span € 5.00
+                  tr
+                    td
+                      span Weight on weft 1
+                    td
+                    td
+                      span g. 320.00
+                  tr
+                    td
+                      span Cost of weft 1
+                    td
+                    td
+                      span € 35.84
+                  tr
+                    td
+                      span Weight on weft 2
+                    td
+                    td
+                      span g. 80.00
+                  tr
+                    td
+                      span Cost of weft 2
+                    td
+                    td
+                      span € 3.27
+                  tr
+                    td
+                      span Weight on weft 3
+                    td
+                    td
+                      span g. 66.67
+                  tr
+                    td
+                      span Cost of weft 3
+                    td
+                    td
+                      span € 7.47
+                  tr
+                    td
+                      span Total weight
+                    td
+                    td
+                      span g. 754.67
+            .invoice-total
+              .invc-total
+                h6 Total Cost : € 7.47
+                h6 Total weight: g. 754.67
+            .invoice-hd
+              .preview_image
+                a
+                  img(src='../img/fabroc2.jfif' alt='image')
+          .col.m6.col.s12.col.l6.text-align_center
+            h4.custom_yellow_color Sampling
+            h5 Book your personalization report
+          .col.m6.col.s12.col.l6
+            h6.text-align_center You will get 1 meter of fabric.
+            form.form-wrp#info-form
+              .row.warps
+                .col.m12.col.s12.col.l12.mt-top
+                  label(for='meters') Meters Of Fabric
+                  input.brd-rd5.mt-top-1#meters(name='meters' type='number' placeholder='1*')
+                  span.error-box
+                .col.m12.col.s12.col.l12
+                  label(for='price') Price
+                  input.brd-rd5.mt-top-1#price(name='price' type='number' placeholder='$50.00*')
+                  span.error-box
+                .col.m12.col.s12.col.l12.text-align_center
+                  a.brd-rd5.waves-effect.waves-light.btn.btn-large.custom-btn(href='#') Login To Reserve Your Sample
+                .col.m12.col.s12.col.l12.text-align_center.mt-top
+                  h4.custom_yellow_color Production
+                  h5 Choose how many meters you want to purchase
+                .col.m12.col.s12.col.l12
+                  label(for='price') Price
+                  input.brd-rd5.mt-top-1#price(name='price' type='number' placeholder='$50.00*')
+                  span.error-box
+                .col.m12.col.s12.col.l12
+                  label(for='meters') Meters Of Fabric
+                  input.brd-rd5.mt-top-1#meters(name='meters' type='number' placeholder='1*')
+                  span.error-box
+                .col.m12.col.s12.col.l12.text-align_center
+                  a.brd-rd5.waves-effect.waves-light.btn.btn-large.custom-btn(href='#') LOGIN BEFORE CONTINUE YOUR PURCHASE

@@ -1,0 +1,57 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+  .widget.pad50-65
+    form.form-wrp#htmlForm(name='createSize')
+      .row.mrg20.warps
+        .col.m3.col.s6.col.l3
+          p Name
+          input.brd-rd5#name(name='name' type='text' placeholder='Name*')
+          span.error-box
+        .col.m3.col.s6.col.l3
+          p Length
+          input.brd-rd5#length(name='length' type='number' placeholder='Length*')
+          span.error-box
+        .col.m3.col.s6.col.l3
+          p Plot Reduction 
+          input.brd-rd5#plotsReduction(name='plotreduction' type='number' placeholder='Plot Reduction*')
+          span.error-box
+        .col.m3.col.s6.col.l3
+          p Plot Number
+          input.brd-rd5#plotsnumber(name='plotsnumber' type='number' placeholder='Plots Number*')
+          span.error-box
+        .col.m6.col.s12.col.l6
+          p Description
+          textarea.brd-rd5#description(placeholder='Enter a description...')
+        .col.m6.col.s12.col.l6
+          p Notes
+          textarea#notes(lass='brd-rd5' placeholder='Write down some notes...')
+        .col.m6.col.s12.col.l6
+          .file-upload-box
+            strong Upload Image
+            .file-box
+              label.fileContainer
+                span.blue-bg.brd-rd5 Choose File
+                span#titleFile No File Selected
+                input#file_input(type='file')
+        .col.m6.col.s12.col.l6.mt-top-1
+          p Select Collection
+          span.slct-bx
+            span
+              select#collectionId
+                option(value='0' selected=true) Collection Id
+                each collection in allActiveCollection
+                  option(value= collection._id)= collection.name
+      .row.mt-top-1
+        .col.m6.s12.col.l6
+          .opt-btn
+            p Active
+            label.switch-light.switch-candy
+              input#active(type='checkbox')
+              span
+                span Off
+                span On
+                a
+      .col.m12.col.s12.col.l12.save-now.mt-top-1
+        button.green-bg.brd-rd5(type="submit") Submit

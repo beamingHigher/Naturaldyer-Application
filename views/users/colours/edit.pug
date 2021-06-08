@@ -1,0 +1,59 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='editColour')
+        .row.mrg20.warps
+          .col.m4.col.s6.col.l4
+            p Code
+            input.brd-rd5#code(name='code' type='text' value=`${data.code}`)
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Title
+            input.brd-rd5#title(name='title' type='text' value=`${data.title}`)
+            span.error-box
+          .col.m4.col.s12.col.l4
+            p Yarn Name
+            input.brd-rd5.validate(name='collection' type='text' value=`${data.yarnId.title}` disabled=true)
+            input#_id(type='hidden' name='target' value=`${data._id}`)
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Hexadecimal Colour
+            input.brd-rd5#hexadecimalColour(name='colour' type='text' value=`${data.hexadecimalColour}`)
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Cost Per Killogram
+            input.brd-rd5#costperKilograms(name='costperkilogram' type='number' value=`${data.costperKilograms}`)
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Supplement
+            input.brd-rd5#supplement(name='supplement' type='number' value=`${data.supplement}`)
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p Supplement Cost
+            input.brd-rd5#supplementCost(name='extra-cost' type='number' value=`${data.supplementCost}`)
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p Sample Price
+            input.brd-rd5#samplePrice(name='sampleprice' type='number' value=`${data.samplePrice}`)
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Description
+            textarea.brd-rd5#description()=data.description
+          .col.m6.col.s12.col.l6
+            p Notes
+            textarea.brd-rd5#notes()=data.notes
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active
+              label.switch-light.switch-candy
+                input#active(type='checkbox' checked=data.active)
+                span
+                  span Off
+                  span On
+                  a
+          .col.m6.col.s12.col.l6
+            img(class='preview_image' src=`/img/uploads/${data.image}`)
+          .col.m12.col.s12.col.l12.save-now.mt-top-1
+          button.green-bg.brd-rd5(type="submit") Submit

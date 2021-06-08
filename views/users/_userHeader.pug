@@ -1,0 +1,49 @@
+header.side-header.expand-header.hdr-bg5.hdr-bgclr
+  .nav-head
+    a(href='/') Naturaldyers
+    span.menu-trigger
+      i.ion-android-menu
+  nav.custom-scrollbar
+    h4 Your Dashboard
+    ul.drp-sec
+      li
+        a(href='/dashboard')
+          i.far.fa-wallet
+          |  Wallet
+      li
+        a(href='/deposit')
+          i.fas.fa-money-check-edit-alt
+          |  Deposit
+      li
+        a(href='/withdraw')
+          i.fas.fa-funnel-dollar
+          |  Withdraw
+      li
+        a(href='/order')
+          i.fas.fa-shopping-cart
+          | Your Orders
+      li
+        a(href='/calendar')
+          i.fas.fa-calendar-week
+          |  Calender
+    h4 Your Profile
+    ul.drp-sec
+      li
+        a(href='/profile')
+          i.fas.fa-user-alt
+          |  View Profile
+      li
+        a(href='#')
+          i.fas.fa-key
+          | Reset Password
+      li
+        a#logout(href="") 
+          i.fas.fa-user-alt
+          |  Logout
+    if user.role == 'admin'
+      h4 Admin Console
+      ul.drp-sec
+        li
+          a(href='/user/productCategorys/list')
+            i.fas.fa-user-alt
+            |  Admin Panel

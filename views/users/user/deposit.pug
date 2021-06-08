@@ -1,0 +1,239 @@
+extends ../userBase
+
+block append script
+  script(src="../js/depositInit.js")
+
+block content
+
+  .pg-tp
+    i.ion-cube
+    .pr-tp-inr
+      h4
+        | Welcome to 
+        strong Naturaldyers!
+        span
+      span Your control panel to manage NDS Token, order & Fabrics.
+  .panel-content
+    .filter-items
+      .row.grid-wrap.mrg20
+        .col.m12.grid-item.col.s12.col.l12
+          .row.mrg20
+            .col.m3.col.s6.col.l3
+              .stat-box.widget.bg-clr5.style2
+                .wdgt-ldr
+                  .ball-scale-multiple
+                    div
+                    div
+                    div
+                i.fab.fa-bitcoin
+                .stat-box-innr
+                  span
+                    | $ 
+                    i.counter 1,206,90
+                  h5 BTC Available
+                span
+                  i.ion-ios-stopwatch
+                  |  Your BTC balance
+            .col.m3.col.s6.col.l3
+              .stat-box.widget.bg-clr6.style2
+                .wdgt-ldr
+                  .ball-scale-multiple
+                    div
+                    div
+                    div
+                i.fab.fa-ethereum
+                .stat-box-innr
+                  span
+                    | $ 
+                    i.counter 20,507
+                  h5 ETH Available
+                span
+                  i.ion-ios-stopwatch
+                  |  Your ETH Balance
+            .col.m3.col.s6.col.l3
+              .stat-box.widget.bg-clr7.style2
+                .wdgt-ldr
+                  .ball-scale-multiple
+                    div
+                    div
+                    div
+                i.fas.fa-usd-circle
+                .stat-box-innr
+                  span
+                    i.counter 79
+                    |  GB
+                  h5 USDT Available
+                span
+                  i.ion-ios-stopwatch
+                  |  Your USDT Balance
+            .col.m3.col.s6.col.l3
+              .stat-box.widget.bg-clr8.style2
+                .wdgt-ldr
+                  .ball-scale-multiple
+                    div
+                    div
+                    div
+                i.far.fa-coins
+                .stat-box-innr
+                  span
+                    i.counter 5347
+                  h5 NDST Available
+                span
+                  i.ion-ios-stopwatch
+                  |  Your NDST Balance
+        .widget.pad50-65
+          .widget-title2
+            h4 Deposit NDST
+            span Deposit here
+          #acordn.acordn-styl1
+            .acordn-itm.brd-rd5
+              h4
+                span BTC Deposit
+                |  Deposit NDST using BTC
+              .acrdn-cnt.custom_background_black
+                .left
+                  h6.customH6.custom_yellow_color.
+                    
+                    Send To Your Secure Tether BTC Deposit Address
+                  
+                  p.custom_para.mt-top Copy Destination Address
+                  .test.mt-top
+                    //  Target 
+                    input#foo(value='1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2')
+                    //  Trigger 
+                    button.btn.custom_yellow_yellow(data-clipboard-target='#foo')
+                      i.far.fa-copy
+                div
+                  h6.customH6.custom_yellow_color.custom_margin-right.text-align_right.
+                   
+                    Or Scan This QR Code
+                  
+                  img.responsive(src='../img/scan.png')
+            .acordn-itm.brd-rd5
+              h4
+                span ETH Deposit
+                |  Deposit NDST using ETH
+              .acrdn-cnt.custom_background_black
+                .left
+                  h6.customH6.custom_yellow_color.
+                  
+                    Send To Your Secure Tether BTC Deposit Address
+                  
+                  p.custom_para.mt-top Copy Destination Address
+                  .test.mt-top
+                    input#foo2(value='1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2')
+                    button.btn.btn2.custom_yellow_yellow(data-clipboard-target='#foo2')
+                      i.far.fa-copy
+                div
+                  h6.customH6.custom_yellow_color.custom_margin-right.text-align_right.
+                  
+                    Or Scan This QR Code
+                   
+                  img.responsive(src='../img/scan.png')
+        .col.m12.grid-item.col.s12.col.l12
+          .widget.prd-wdgt.pad50-40
+            .wdgt-opt
+              span.wdgt-opt-btn
+                i.ion-android-more-vertical
+              .wdgt-opt-lst.brd-rd5
+                a.delt-wdgt(href='#') Delete
+                a.expnd-wdgt(href='#') Expand
+                a.refrsh-wdgt(href='#') Refresh
+            .wdgt-ldr
+              .ball-scale-multiple
+                div
+                div
+                div
+            .table-wrap
+              table.table.style2.style3
+                thead.table-inverse
+                  tr
+                    th
+                      span #
+                    th
+                      span Image
+                    th
+                      span Product Name
+                    th
+                      span Product Code
+                    th
+                      span Purchased on
+                    th
+                      span Status
+                    th
+                      span Price
+                    th
+                      span QTY
+                tbody
+                  tr
+                    td
+                      span.blue-bg.indx 01
+                    td
+                      img.brd-rd5(src='../assets/images/resource/prd-img1.jpg' alt)
+                    td
+                      h4
+                        a(href='#') Black Jacket
+                    td
+                      span 4ABSD58
+                    td
+                      span 10 June 2017
+                    td
+                      span.badge.badge-success.brd-rd5 Pending
+                    td
+                      span.prc $99.98
+                    td
+                      span 01
+                  tr
+                    td
+                      span.blue-bg.indx 02
+                    td
+                      img.brd-rd5(src='../assets/images/resource/prd-img2.jpg' alt)
+                    td
+                      h4
+                        a(href='#') Cannon LA Camera
+                    td
+                      span 4OCSD51
+                    td
+                      span 15 June 2017
+                    td
+                      span.badge.badge-info.brd-rd5 Process
+                    td
+                      span.prc $458.98
+                    td
+                      span 03
+                  tr
+                    td
+                      span.blue-bg.indx 03
+                    td
+                      img.brd-rd5(src='../assets/images/resource/prd-img3.jpg' alt)
+                    td
+                      h4
+                        a(href='#') LR Head Phones
+                    td
+                      span 4ABSD60
+                    td
+                      span 19 June 2017
+                    td
+                      span.badge.badge-warning.brd-rd5 Failed
+                    td
+                      span.prc $99.98
+                    td
+                      span 01
+                  tr
+                    td
+                      span.blue-bg.indx 04
+                    td
+                      img.brd-rd5(src='../assets/images/resource/prd-img4.jpg' alt)
+                    td
+                      h4
+                        a(href='#') Watch RA Duble
+                    td
+                      span 4OCSD68
+                    td
+                      span 20 June 2017
+                    td
+                      span.badge.badge-info.brd-rd5 Process
+                    td
+                      span.prc $199.98
+                    td
+                      span 03

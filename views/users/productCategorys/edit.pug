@@ -1,0 +1,31 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+  .widget.pad50-65
+    form.form-wrp#htmlForm(name='editProductCategory')
+      .row.mrg20
+        .col.m12.col.s12.col.l12
+          p Name
+          input.brd-rd5#name(name='name' type='text' value=`${data.name}`)
+          input#_id(type='hidden' name='target' value=`${data._id}`)
+          span.error-box
+        .col.m6.col.s12.col.l6
+          p Description
+          textarea.brd-rd5#description()=data.description
+        .col.m6.col.s12.col.l6
+          p Notes
+          textarea.brd-rd5#notes()=data.notes
+        .col.m6.s12.col.l6
+          .opt-btn
+            p Active
+            label.switch-light.switch-candy
+              input#active(type='checkbox' checked=data.active)
+              span
+                span Off
+                span On
+                a
+        .col.m12.col.s12.col.l12
+            img(class='preview_image' src=`/img/uploads/${data.image}`)
+        .col.m12.col.s12.col.l12.save-now.mt-top-1
+            button.brd-rd30.waves-effect.waves-light.btn.green(type="submit") Submit

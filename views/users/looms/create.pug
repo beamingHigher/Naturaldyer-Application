@@ -1,0 +1,61 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='createLoom')
+        .row.mrg20.warps
+          .col.m6.col.s12.col.l6
+            p Name
+            input.brd-rd5#name(name='name' type='text' placeholder='Name*')
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Supplier Name
+            input.brd-rd5.validate(name='code' type='text' value=`${user.name}` disabled=true)
+            input#supplierId(type='hidden' name='target' value=`${user._id}`)
+          .col.m6.col.s12.col.l6
+            p Select Warp
+            span.slct-bx
+              span
+                select#warpId
+                  option(value='0' selected=true) Warp Id
+                  each warp in allActiveWarp
+                    option(value= warp._id)= warp.code
+          .col.m6.col.s6.col.l6
+            p Chain Reduction
+            input.brd-rd5#chainReduction(name='chainreduction' type='number' placeholder='Chain Reduction*')
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p High
+            input.brd-rd5#highInCm(name='highincm' type='number' placeholder='High*')
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Cost Per Beat
+            input.brd-rd5#costPerBeat(name='costperbeat' type='number' placeholder='Cost Per Beat*')
+            span.error-box
+        .row.mrg20.warps
+          .col.m6.col.s12.col.l6
+            p Description 
+            textarea.brd-rd5#description(placeholder='Enter a description...')
+          .col.m6.col.s12.col.l6
+            p Notes
+            textarea.brd-rd5#notes(placeholder='Write down some notes...')
+          .col.m6.col.s12.col.l6
+            .file-upload-box
+              strong Upload Image
+              .file-box
+                label.fileContainer
+                  span.blue-bg.brd-rd5 Choose File
+                  span#titleFile No File Selected
+                  input#file_input(type='file')
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active
+              label.switch-light.switch-candy
+                input#active(type='checkbox')
+                span
+                  span Off
+                  span On
+                  a
+        .col.m12.col.s12.col.l12.save-now.mt-top-1
+          button.green-bg.brd-rd5(type="submit") Submit

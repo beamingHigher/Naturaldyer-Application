@@ -1,0 +1,54 @@
+header#header.header.header-fixed
+  .container-fluid.clearfix
+    .brand
+      a(href='/')
+        .brand-name.text-texture
+          img(src='img/logo.png' style='height: 123%' alt)
+        .brand-text Naturaldyers
+    button.nav-toggle-btn.a-nav-toggle
+      span.nav-toggle-title Menu
+      span.nav-toggle.nav-toggle-sm
+        span.stick.stick-1
+        span.stick.stick-2
+        span.stick.stick-3
+  .hide-menu.a-nav-toggle
+  .menu
+    .menu-main#accordion
+      ul
+        li.active
+          a.animsition-link(data-animsition-out-class='fade-out' data-text='Home' href='/') Home
+        li
+          a.animsition-link(href='/about' data-animsition-out-class='fade-out' data-text='About') About
+        li
+          a.animsition-link(href='/how-it-works' data-animsition-out-class='fade-out' data-text='How It Works') How It Works
+        li
+          a.animsition-link(href='/contact' data-animsition-out-class='fade-out' data-text='Contact') Contact
+        if user
+          li
+            a.animsition-link(data-animsition-out-class='fade-out' data-text='Dashboard' href='/dashboard' role='button') Dashboard
+          li
+            a.animsition-link#logout(data-animsition-out-class='fade-out' data-text='Logout' role='button') Logout
+        else 
+          li
+            a.animsition-link(data-animsition-out-class='fade-out' data-text='Registration' href='/register' role='button') Registration 
+          li
+            a.animsition-link(data-animsition-out-class='fade-out' data-text='Login' href='/login' role='button') Login
+    .menu-footer
+      ul.social.social-rounded
+        li
+          a(href='#')
+            i.socicon-twitter
+        li
+          a(href='#')
+            i.socicon-facebook
+        li
+          a(href='#')
+            i.socicon-googleplus
+      .menu-copyright
+        | © 2021 
+        strong Naturaldyers OU
+        | . All Rights Reserved.
+        br
+        | Design by 
+        strong
+          a(href='https://wscf.io/' target='_blank') WSCF

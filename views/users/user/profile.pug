@@ -1,0 +1,50 @@
+extends ../userBase
+
+block content
+  .pg-tp
+    i.ion-cube
+    .pr-tp-inr
+      h4 Profile Page
+      span Manage your profile details.
+
+  .panel-content
+    .widget.pad50-65
+      .profile-wrp
+        .row
+          .col.m4.col.s12.col.l8
+            .profile-info-wrp
+              .insta-wrp
+                span
+                  img.brd-rd50(src=`/img/uploads/${user.image}` alt)
+                  span.sts.online
+                .insta-inf
+                  h2
+                    a(href='#')=user.name
+                    |  
+                    i.fa.fa-pencil.edit-btn
+                  span.desg
+                    | User Role 
+                    a.blue-clr(href='#')=user.role
+                .usr-gnrl-inf
+                  h5.prf-edit-tl
+                    | General Info 
+                    i.fa.fa-pencil.edit-btn
+                  .grn-inf-lst
+                    i.fa.fa-graduation-cap
+                    |  Customer Type: 
+                    span=user.userType
+                .usr-cnt-inf
+                  h5.prf-edit-tl
+                    | Contact Information 
+                    i.fa.fa-pencil.edit-btn
+                  ul.usr-cnt-inf-lst
+                    li
+                      i.fa.fa-phone
+                      |  
+                      strong Phone:
+                      p=user.phone
+                    li
+                      i.fa.fa-envelope
+                      |  
+                      strong Email ID:
+                      p=user.email

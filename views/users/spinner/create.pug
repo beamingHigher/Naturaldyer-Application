@@ -1,0 +1,51 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+    .widget.pad50-65
+      form.form-wrp#createYarnForm
+        .row.mrg20.warps
+          .col.m4.col.s6.col.l4
+            p Company Name
+            input#companyname.brd-rd30(type="text" placeholder="Company Name*")
+            span.error-box
+          .col.m4.col.s12.col.l4
+            p Name
+            input.brd-rd30(type='text' value=`${user.name}` disabled=true)
+            input#userId(type='hidden' name='target' value=`${user._id}`)
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Telephone
+            input#telephone.brd-rd30(type="text" placeholder="Telephone*")
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p VAT Number
+            input#vatNumber.brd-rd30(type="text" placeholder="VAT Number*")
+            span.error-box
+          .col.m6.col.s6.col.l6
+            p Reference
+            input#reference.brd-rd30(type="text" placeholder="Reference*")
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Description
+            textarea.brd-rd5#description(placeholder='Enter a description...')
+          .col.m12.col.s12.col.l12
+            .file-upload-box
+              strong Bussiness Certificate
+              .file-box
+                label.fileContainer
+                  span.blue-bg.brd-rd5 Browse
+                  |                                       No File Selected.
+                  input(type="file")
+        .row.mt-top-1
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active
+              label.switch-light.switch-candy
+                input#activeForBusiness(type='checkbox')
+                span
+                  span Off
+                  span On
+                  a
+          .col.m12.col.s12.col.l12.save-now.mt-top-1
+            button.green-bg.brd-rd5(type="submit") Submit

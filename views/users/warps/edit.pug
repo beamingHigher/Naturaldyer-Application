@@ -1,0 +1,70 @@
+extends ../adminBase
+
+block content
+  .panel-content#modelPanel
+    .widget.pad50-65
+      form.form-wrp#htmlForm(name='editWarp')
+        .row.mrg20.warps
+          .col.m4.col.s6.col.l4
+            p Code
+            input.brd-rd5#code(name='code' type='text' value=`${data.code}`)
+            span.error-box
+          .col.m4.col.s6.col.l4
+            p Title
+            input.brd-rd5#title(name='title' type='text' value=`${data.title}`)
+            span.error-box
+          .col.m4.col.s12.col.l4
+            p Material
+            input.brd-rd5#material(name='material' type='text' value=`${data.material}`)
+            span.error-box
+          .col.m4.col.s12.col.l4
+            p Product Category
+            input.brd-rd5.validate(name='code' type='text' value=`${data.productCategory.name}` disabled=true)
+            input#_id(type='hidden' name='target' value=`${data._id}`)
+          .col.m3.col.s6.col.l3
+            p Weight
+            input.brd-rd5#weight(name='weight' type='number' value=`${data.weight}`)
+            span.error-box
+          .col.m3.col.s6.col.l3
+            p Cost per Killogram
+            input.brd-rd5#costPerKg(name='costperkilograms' type='number' value=`${data.costPerKg}`)
+            span.error-box
+          .col.m3.col.s6.col.l3
+            p Supplement
+            input.brd-rd5#supplement(name='supplement' type='number' value=`${data.supplement}`)
+            span.error-box
+          .col.m3.col.s6.col.l3
+            p Cost Supplement
+            input.brd-rd5#costSupplement(name='cost supplement' type='number' value=`${data.costSupplement}`)
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Colour
+            input.brd-rd5#colour(name='colour' type='text' value=`${data.colour}`)
+            span.error-box
+          .col.m6.col.s12.col.l6
+            p Notes
+            textarea.brd-rd5#notes()=data.notes
+          .col.m6.col.s12.col.l6
+            p Description
+            textarea.brd-rd5#description()=data.description
+          .col.m6.s12.col.l6
+            .opt-btn
+              p Active
+              label.switch-light.switch-candy
+                input#active(type='checkbox' checked=data.active)
+                span
+                  span Off
+                  span On
+                  a
+          .col.m6.col.s12.col.l6
+            .file-upload-box
+              strong Image
+              .file-box
+                label.fileContainer
+                  span.blue-bg.brd-rd5 Choose File
+                  | No File Selected.
+                  input(type='file')
+        .col.m6.col.s12.col.l6
+          img(class='preview_image' src=`/img/uploads/${data.image}`)
+        .col.m12.col.s12.col.l12.save-now.mt-top-1
+          button.green-bg.brd-rd5(type="submit") Submit

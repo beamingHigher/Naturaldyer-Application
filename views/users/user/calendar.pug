@@ -1,0 +1,60 @@
+extends ../userBase
+
+block content
+  .pg-tp
+    i.ion-cube
+    .pr-tp-inr
+      h4
+        | Welcome to 
+        strong Naturaldyers!
+        span
+      span Your control panel to manage NDS Token, order & Fabrics.
+  .panel-content
+    .widget.calndr-wdgt.pad50-40
+      h4.widget-title Calendar
+      .calndr-wrp
+        a.blue-bg.brd-rd5(href='invoice.html') Add Event
+        span.slct-bx
+          i.ion-android-funnel
+          span
+          select
+            option Monthly
+            option Yearly
+            option Weekly
+        #calendar
+
+block append script
+  script.
+    $(document).ready(function () {
+          "use strict";
+    
+          //===== Full Calendar =====//
+          if ($.isFunction($.fn.fullCalendar)) {
+            $("#calendar").fullCalendar({
+              header: {
+                left: "prev",
+                center: "title",
+                right: "next",
+              },
+              height: 530,
+              defaultDate: "2017-09-12",
+              editable: true,
+              eventLimit: true,
+              events: [
+                {
+                  title: "Long Event...",
+                  start: "2017-09-04",
+                },
+                {
+                  title: "Repeating Event",
+                  start: "2017-09-09",
+                  end: "2017-09-10",
+                },
+                {
+                  title: "Word Show...",
+                  start: "2017-09-21",
+                },
+              ],
+            });
+          }
+        });
